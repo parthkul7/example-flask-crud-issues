@@ -16,6 +16,9 @@
                             <textarea class="form-control" name="description" cols="100"
                                       placeholder="Add a Description" required> {{ entry.description }} </textarea>
                         </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="assigned_to" placeholder="Assignee" value="{{ entry.assigned_to }}" required>
+                        </div>
                         <button class="btn btn-primary" type="submit">
                             Update
                         </button>
