@@ -30,8 +30,9 @@ def add():
         form = request.form
         title = form.get('title')
         description = form.get('description')
+        assigned_to = form.get('assigned_to')
         if not title or description:
-            entry = Entry(title = title, description = description)
+            entry = Entry(title=title, description=description, assigned_to=assigned_to)
             db.session.add(entry)
             db.session.commit()
             return redirect('/')
@@ -55,8 +56,10 @@ def update(id):
             form = request.form
             title = form.get('title')
             description = form.get('description')
+            assigned_to = form.get('assigned_to')
             entry.title = title
             entry.description = description
+            entry.assigned_to = assigned_to
             db.session.commit()
         return redirect('/')
 
